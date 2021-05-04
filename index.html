@@ -15,6 +15,46 @@
     </head>
     <body>
 
+        <div class="jumbotron jumbotron-fluid text-center p-3" style="background-color:#23272e ;color: rgb(255, 102, 0);">
+            <h1> <strong>Weather App</strong></h1>
+        </div>
+        <div class = "container">
+            <div class="row">
+                <div class="searchArea col-sm-4 bg-dark">
+                    <h4 class="srchCity" style="color:rgb(255, 102, 0)"><strong>Search City:</strong></h4>
+
+                    <div class="searchBar mb-3">
+                        <input type="text" class="form" id="searchCity" placeholder="City name" aria-describedby="searchButton">
+                        <div>
+                            <button class="button bg-dark text-light" id="srchButton"><i class="fa fa-search"></i></button>
+                        </div>
+
+                        <button class="clear btn btn-dark" type="button" id="clearHistory">Clear</button>
+                <ul class="list">
+
+                </ul>
+                    </div>
+
+                    <div class="todayForecast col-sm-8">
+                        <div class="row ml-2 border border-dark rounded">
+                            <div class="forecastElem col-sm-12" id="currentWeather">
+                                <h3 class="cityName mb-1 mt-2 bolder" id="currentCity"></h3>
+                                <p>Temperature: <span class="current" id="temperature"></span></p>
+                                <p>Wind Speed: <span class="current" id="windSpeed"></span></p>
+                                <p>Humidity: <span class="current" id="humidity"></span></p> 
+                                <p>UV index: <span class="current bg-danger rounded py-2 px-2 text-white" id="uvIndex"></span></p> 
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+
+
+        </div>
+
         <script src="assets\js\scrypt.js"></script>
 
     </body>
