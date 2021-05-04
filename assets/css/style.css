@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ftrDay {
+    font-size: 15px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+span {
+    font-size: medium;
+}
+
+li:hover {
+    background-color: white;
+    text-emphasis-color: black;
+    text-decoration: transparent;
+}
