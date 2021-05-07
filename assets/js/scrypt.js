@@ -102,3 +102,10 @@ function UVIndex(ln,lt){
 }
 
 
+// user input serac history
+function addToList(c){
+    var searchList= $("<li>"+c.toUpperCase()+"</li>");
+    $(searchList).attr("class","list-group-item");
+    $(searchList).attr("data-value",c.toUpperCase());
+    $(".list").append(searchList);
+}
