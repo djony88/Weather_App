@@ -15,22 +15,22 @@
     </head>
     <body>
         <!-- Weather App title -->
-        <div class="jumbotron jumbotron-fluid text-center p-3" style="background-color:#23272e ;color: rgb(255, 102, 0);">
+        <div class="jumbotron jumbotron-fluid mt-2 text-center p-3" style="background-color:#23272e ;color: rgb(255, 102, 0);">
             <h1> <strong>Weather App</strong></h1>
         </div>
         <!-- Search bar and history -->
         <div class = "container">
             <div class="row">
-                <div class="searchArea col-sm-4 bg-dark">
+                <div class="searchArea col-lg-10 bg-dark">
                     <h4 class="srchCity" style="color:rgb(255, 102, 0)"><strong>Search City:</strong></h4>
 
                     <div class="searchBar mb-3">
                         <input type="text" class="form-control" id="searchCity" placeholder="City name" aria-describedby="searchButton">
-                        <div>
+                        <div class="input-group-append">
                             <button class="button bg-dark text-light" id="searchButton"><i class="fa fa-search"></i></button>
                         </div>
 
-                        <button class="clear btn btn-dark" type="button" id="clearHistory">Clear</button>
+                        <button class="clear btn-dark" type="button" id="clearHistory">Clear</button>
                 <ul class="list">
 
                 </ul>
@@ -52,31 +52,31 @@
                     <div class="5-day col-sm-16" style="color:rgb(255, 102, 0)" id ="futureWeather">
                         <h3>5 Day Forecast:</h3>
                         <div class="row text-light">
-                            <div class="ftrDay col-sm-2 bg-primary text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <div class="ftrDay col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
                                 <p id="fDate0"></p>
                                 <p id="fImg0"></p>
                                 <p>Temperature:<span id="fTemp0"></span></p>
                                 <p>Humidity:<span id="fHumidity0"></span></p>
                             </div>
-                            <div class="ftrDay col-sm-2 bg-primary text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <div class="ftrDay col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
                                 <p id="fDate1"></p>
                                 <p id="fImg1"></p>
                                 <p>Temperature:<span id="fTemp1"></span></p>
                                 <p>Humidity:<span id="fHumidity1"></span></p>
                             </div>
-                            <div class="ftrDay col-sm-2 bg-primary text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <div class="ftrDay col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
                                 <p id="fDate2"></p>
                                 <p id="fImg2"></p>
                                 <p>Temperature:<span id="fTemp2"></span></p>
                                 <p>Humidity:<span id="fHumidity2"></span></p>
                             </div>
-                            <div class="ftrDay col-sm-2 bg-primary text-white ml-2 mb-3 p-2 mt-2 rounded">
+                            <div class="ftrDay col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
                                 <p id="fDate3"></p>
                                 <p id="fImg3"></p>
                                 <p>Temperature:<span id="fTemp3"></span></p>
                                 <p>Humidity:<span id="fHumidity3"></span></p>
                             </div>
-                            <div class="ftrDay col-sm-2 bg-primary text-white ml-2 mb-3 p-2 mt-2 rounded" >
+                            <div class="ftrDay col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
                                 <p id="fDate4"></p>
                                 <p id="fImg4"></p>
                                 <p>Temperature:<span id="fTemp4"></span></p>
