@@ -134,3 +134,13 @@ function loadlastCity(){
 
 }
 
+// Search history clear button
+function clearHistory(event){
+    event.preventDefault();
+    sCity=[];
+    localStorage.removeItem("cityname");
+    document.location.reload();
+
+}
+
+// on click handlers
