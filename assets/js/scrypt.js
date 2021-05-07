@@ -11,6 +11,17 @@ var currentHumidity = $("#humidity");
 var currentUvindex = $("#uvIndex");
 var srchCity=[];
 
+// Checks input if it exist in local storage history
+function find(c){
+    for (var i=0; i<srchCity.length; i++){
+        if(c.toUpperCase()===srchCity[i]){
+            return -1;
+        }
+    }
+
+    return -1;
+}
+
 // open weather API key
 var APIkey = "f2e60cb0b34680eabdf19a9dec1b7967";
 
@@ -77,13 +88,17 @@ function currentWeather(city){
     });
 
 }
-// Checks input if it exist in local storage history
-function find(c){
-    for (var i=0; i<srchCity.length; i++){
-        if(c.toUpperCase()===srchCity[i]){
-            return -1;
-        }
-    }
 
-    return -1;
+// UV index response
+function UVIndex(ln,lt){
+    // UV index API url
+    var uviURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIkey+"&lat="+lt+"&lon="+ln;
+    $.ajax({
+        url:uviURL,
+        method:"GET",
+    }).then(function(response){
+        $(currentUvindex).html(response.value);
+    });
 }
+
+
