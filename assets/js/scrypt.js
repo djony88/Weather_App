@@ -32,7 +32,49 @@ function currentWeather(city){
     }).then(function(response){
 
         console.log(response);
-    })
+
+        var weatherIcon= response.weather[0].icon;
+        var iconURL="https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
+        var date = new Date(response.dt*1000).toLocaleDateString();
+
+        // parse response for city name and concating icon and date
+        $(currentCity).html(response.name + "("+date+")" + "<img src="+iconURL+">");
+
+        // current temp in Farenheits
+        var tempFar = (response.main.temp - 273.15)* 1.80 + 32;
+        $(currentTemp).html((tempFar).toFixed(2)+"&#8457");
+
+        // wind speed in MPH
+        var ws=response.wind.speed;
+        var windsmph=(ws*2.237).toFixed(1);
+        $(currentWSpeed).html(windsmph+"MPH");
+
+        // current humidity
+        $(currentHumidty).html(response.main.humidity+"%");
+
+        // UV index
+        UVIndex(response.coord.lon,response.coord.lat);
+        forecast(response.id);
+        if(response.cod==200){
+            sCity=JSON.parse(localStorage.getItem("cityname"));
+            console.log(sCity);
+            if (sCity==null){
+                sCity=[];
+                sCity.push(city.toUpperCase()
+                );
+                localStorage.setItem("cityname",JSON.stringify(sCity));
+                addToList(city);
+            }
+            else {
+                if(find(city)>0){
+                    sCity.push(city.toUpperCase());
+                    localStorage.setItem("cityname",JSON.stringify(sCity));
+                    addToList(city);
+                }
+            }
+        }
+
+    });
 
 }
 // Checks input if it exist in local storage history
