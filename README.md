@@ -16,3 +16,4 @@ Requirements:
 * UV index is presented with diferent color wether the conditions are favorable, moderate, or severe.
 * Future wether conditions are presented in 5-day forecast that is presented with date, an icon representation of weather conditions, temperature, and humidity.
 * When clicked on city from history it presents again the current and future weather conditions for selected city.
+
