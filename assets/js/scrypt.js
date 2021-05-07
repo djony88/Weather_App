@@ -109,3 +109,28 @@ function addToList(c){
     $(searchList).attr("data-value",c.toUpperCase());
     $(".list").append(searchList);
 }
+
+// display search history from local storage
+function invokePastSearch(event){
+    var historyList=event.target;
+    if (event.target.matches("li")){
+        city=historyList.textContent.trim();
+        currentWeather(city);
+    }
+}
+
+// Render search history function from local storage
+function loadlastCity(){
+    $("ul").empty();
+    var sCity = JSON.parse(localStorage.getItem("cityname"));
+    if(sCity!==null){
+        sCity=JSON.parse(localStorage.getItem("cityname"));
+        for(i=0; i<sCity.length;i++){
+            addToList(sCity[i]);
+        }
+        city=sCity[i-1];
+        currentWeather(city);
+    }
+
+}
+
