@@ -143,6 +143,33 @@ function clearHistory(event){
 
 }
 
+// 5 day forecast
+function forecast(cityId){
+    var dayOver= false;
+    var queryForecastURL="https://api.openweathermap.org/data/2.5/forecast?id="+cityId+"&appid="+APIkey;
+    $.ajax({
+        url:queryForecastURL,
+        method:"GET",
+    }).then(function(response){
+
+        for (i=0; i<5; i++){
+            var date= new Date((response.list[((i+1)*8)-1].dt)*1000).toLocaleDateString();
+            var iconCode= response.list[((i+1)*8)-1].weather[0].icon;
+            var iconURL= "https://openweathermap.org/img/wn/"+iconcode+".png";
+            var tempK= response.list[((i+1)*8)-1].main.temp;
+            var tempF= (((tempK-273.5)*1.80)+32).toFixed(2);
+            var humid= response.list[((i+1)*8)-1].main.humidity;
+
+            $("#fDate"+i).html(date);
+            $("#fImg"+i).html("<img src="+iconURL+">");
+            $("#fTemp"+i).html(tempF+"&#8457");
+            $("#fHumidity"+i).html(humid+"%");
+        }
+    });
+}
+
+
+
 // on click handlers
 $("#searchButton").on("click",displayWeather);
 $(document).on("click",invokePastSearch);
